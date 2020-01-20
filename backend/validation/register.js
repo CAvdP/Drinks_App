@@ -2,7 +2,7 @@
 
 const Validator = require('validator');
 const isEmpty = require('./is-empty');
-
+// checks if a field within the request form, from the front-end is empty, applies to the register form //
 module.exports = function validateRegisterInput(data) {
     let errors = {};
     data.name = !isEmpty(data.name) ? data.name : '';

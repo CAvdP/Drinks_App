@@ -6,8 +6,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-
-
+// builds footer with social media icons //
 class Footer extends Component {
     render(){
         return(

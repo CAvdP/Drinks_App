@@ -2,7 +2,7 @@
 
 const Validator = require('validator');
 const isEmpty = require('./is-empty');
-
+// checks if a field within the request form, from the front-end is empty, applies to the login form //
 module.exports = function validateLoginInput(data) {
     let errors = {};
     data.email = !isEmpty(data.email) ? data.email : '';

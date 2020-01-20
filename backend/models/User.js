@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-
+// Database model for an user //
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -18,9 +18,6 @@ const UserSchema = new Schema({
         required: true
     },
     avatar: {
-        type: String
-    },
-    avatarURL: {
         type: String
     },
     date: {

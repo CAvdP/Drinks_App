@@ -8,7 +8,6 @@ import { registerUser } from '../actions/authentication';
 import classnames from 'classnames';
 
 class Register extends Component {
-
     constructor() {
         super();
         this.state = {
@@ -38,7 +37,7 @@ class Register extends Component {
         }
         this.props.registerUser(user, this.props.history);
     }
-
+    // once authenticated it will send the user to the homepage //
     componentWillReceiveProps(nextProps) {
         if(nextProps.auth.isAuthenticated) {
             this.props.history.push('/')
@@ -55,7 +54,7 @@ class Register extends Component {
             this.props.history.push('/');
         }
     }
-
+    // builds form to register //
     render() {
         const { errors } = this.state;
         return(

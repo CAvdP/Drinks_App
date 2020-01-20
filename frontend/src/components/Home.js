@@ -1,7 +1,5 @@
 // Home.js
-
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -10,23 +8,22 @@ import EventList from './EventList';
 import Faq from './Faq';
 import Footer from './Footer';
 
+/* Home is the homepage, if not logged in, it will provide information about the app, 
+once logged in, it it will be a personalized homepage for the user */
 class Home extends Component {
     
     render() {
+        // shows only to a logged in user //
         const {isAuthenticated, user} = this.props.auth;
-        console.log(user);
         const authContent = (
-          <div className="container">
-              
-            {/* <img src={user.avatarUrl} alt={user.name} title={user.name} className="profile-picture--big"/>   */}
-            <div className="user-name"><h2>{user.name}</h2></div>
-            
+            <div className="container">
+                <div className="user-name"><h2>{user.name}</h2></div>
                 <h3>Upcoming events</h3>
                 <EventList />
                 <Footer />
-          </div>
+            </div>
         )
-
+        // shows to everyone who is not logged in //
         const guestContent = (
             <div className="content container">
                 <section className="banner">
@@ -41,7 +38,7 @@ class Home extends Component {
                 <Footer />
             </div>
         )
-
+        // depending on the value of 'isAuthenticated' will either show personal content or public content. //
         return (
             <div>
                 {isAuthenticated ? authContent : guestContent}

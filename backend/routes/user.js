@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+// uses gravatar to fetch profile picture, (disabled on front-end now) //
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -19,6 +20,7 @@ router.post('/register', function(req, res) {
     if(!isValid) {
         return res.status(400).json(errors);
     }
+    // check if email is already in use //
     User.findOne({
         email: req.body.email
     }).then(user => {
@@ -28,6 +30,7 @@ router.post('/register', function(req, res) {
             });
         }
         else {
+            // fetch the gravatar image based on the email adres //
             const avatar = gravatar.url(req.body.email, {
                 s: '200',
                 r: 'pg',
@@ -70,13 +73,14 @@ router.post('/login', (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
-
+    // checks if email(username) excists //
     User.findOne({email})
         .then(user => {
             if(!user) {
                 errors.email = 'User not found'
                 return res.status(404).json(errors);
             }
+            // compare the two encrypted passwords
             bcrypt.compare(password, user.password)
                     .then(isMatch => {
                         if(isMatch) {
@@ -85,6 +89,7 @@ router.post('/login', (req, res) => {
                                 name: user.name,
                                 avatar: user.avatar
                             }
+                            // creates token + expire time //
                             jwt.sign(payload, 'secret', {
                                 expiresIn: 3600
                             }, (err, token) => {
@@ -113,13 +118,12 @@ router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
+/* handles API call for the events, only sends events related to the current logged in user. 
+normally you query by unique id of a person, so the guest list would be filled with id's instead of actual names.
+(you would then loop through those id's and query each user for their profile picture)*/
+
 router.get('/me/events',passport.authenticate('jwt', { session: false }), (req, res) => {
-    
-    // Event.find({'host':req.user.name}).then((results) => {return res.json(results)})
-    // Event.find({'type':'COCKTAILS'}).then((results) => {return res.json(results)})
     Event.find({'guests':req.user.name}).then((results) => {return res.json(results)})
 });
-
-
 
 module.exports = router;

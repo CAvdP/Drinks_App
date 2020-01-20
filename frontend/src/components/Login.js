@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loginUser } from '../actions/authentication';
 import classnames from 'classnames';
-
+// form to login //
 
 
 class Login extends Component {
@@ -53,7 +53,8 @@ class Login extends Component {
             });
         }
     }
-
+    // render the login form //
+    // in case the user does not have an account yet, they can click on register to open the register page. //
     render() {
         const {errors} = this.state;
         return(
@@ -92,8 +93,8 @@ class Login extends Component {
                     </button>
                 </div>
             </form>
-             
-                <Link className="nav-link" to="/register">Create your account here</Link>
+         
+            <Link className="nav-link" to="/register">Create your account here</Link>
                 
         </div>
         )

@@ -21,6 +21,7 @@ import Home from './components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
+// Check if user is still logged in //
 if(localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
   const decoded = jwt_decode(localStorage.jwtToken);
@@ -33,20 +34,18 @@ if(localStorage.jwtToken) {
   }
 }
 
+// Static nav and page, only content changes by the use of the react-router //
 class App extends Component {
   render() {
     return (
       <Provider store = { store }>
         <Router>
             <div className="page">
-              <Navbar />
-                
+              <Navbar />    
                 <div className="content">
                   <Route exact path="/register" component={ Register } />
                   <Route exact path="/login" component={ Login } />
-
                   <Route exact path="/" component={ Home } />
-
                 </div>
             </div>
           </Router>

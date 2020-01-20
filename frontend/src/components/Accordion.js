@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-
+// Creates a collapsible container, used for creating event sections and comment sections //
 const Accordion = props => {
   const [active, setActive] = useState(false)
   const contentRef = useRef(null)
@@ -13,7 +13,7 @@ const Accordion = props => {
   }
 
   
-
+// props.type used to give specific 'themed' classes //
   return (
     <div className={"accordion-section "+ props.type + "-border" }>
       <button className={"accordion-top " + props.type} onClick={toogleActive}>

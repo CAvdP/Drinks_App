@@ -1,3 +1,5 @@
+// for color changes and image references check _config.scss //
+
 // reset browser defaults //
 *{
     padding: 0;
@@ -48,9 +50,7 @@ h3{text-align: center;}
 
 .content{
     position: relative;
-    
     overflow-x: hidden;
-    overflow-y: scroll;
     flex-grow: 1;
 }
 

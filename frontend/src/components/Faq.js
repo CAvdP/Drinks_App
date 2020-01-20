@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+// plain piece of html to insert on the home when user is nog logged in //
 class Faq extends Component {
     render(){
         return(

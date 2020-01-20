@@ -3,20 +3,50 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-
+// database model for an event //
 const EventSchema = new Schema({
-    name: {
+    type: {
         type: String,
         required: true
     },
-    host: {
+    time: {
         type: String,
         required: true
-    },  
-    date: {
-        type: Date,
-        default: Date.now
-    }
+    },
+    title: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: Object,
+        required: true,
+        name:{
+            type: Object,
+            required: true,
+        },
+        latitude:{
+            type: Object,
+            required: true,
+        },
+        longitude:{
+            type: Object,
+            required: true,
+        }
+    },
+    creator: {
+        type: Object,
+        required: true,
+        name:{
+            type: Object,
+            required: true,
+        },
+        avatarURL:{
+            type: Object,
+            required: true,
+        }
+    },
+    guests:[],
+    comments:[]  
 });
 
 const Event = mongoose.model('events', EventSchema);

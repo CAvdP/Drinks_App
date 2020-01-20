@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../actions/authentication';
 import { withRouter } from 'react-router-dom';
 
-
+// builds a simple navbar with the logo, login and logout buttons //
 
 class Navbar extends Component {
 
@@ -15,21 +15,21 @@ class Navbar extends Component {
         e.preventDefault();
         this.props.logoutUser(this.props.history);
     }
-
+    
     render() {
         const {isAuthenticated} = this.props.auth;
+        // if the user is logged in it will show the logout button //
         const authLinks = (
-            <ul className="button-container">
+            <div className="button-container">
                 <button className="navigation-items__button" onClick={this.onLogout.bind(this)}>Logout</button>
-            </ul>
+            </div>
         )
-      const guestLinks = (
-        <ul className="button-container"> 
-            <li className="">
+        // if not authorized it will show a login button //     
+        const guestLinks = (
+            <div className="button-container"> 
                 <Link className="navigation-items__button" to="/login">Login<span className="glyphicon glyphicon-log-in"></span></Link>
-            </li>
-        </ul>
-      )
+            </div>
+        )
         return(
             <nav className="navigation">
                 <div className="navigation-items">
