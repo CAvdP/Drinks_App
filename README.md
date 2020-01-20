@@ -9,6 +9,7 @@ For the backend to run: $ nodemon app (runs under localhost:5000)
 For front-end run: $ npm start (runs under localhost:3000)
 
 Disable CORS when runned on localhost.
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 when creating new accounts use the following names if you want to have an event on the homepage:
@@ -16,13 +17,18 @@ Phil Hard
 Fie Jelved
 Mark Hartley
 Roger Planes
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 One account is subscribed under all events:
 Phil Hardy
 login information:
 username: philhardy@gmail.com
 pw: philhardy
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 I tried to mimic your API as much as possible, but since I like to make the events secure and personal,
 I created my own database and backend as well.
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
