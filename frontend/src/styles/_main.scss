@@ -1,0 +1,239 @@
+// reset browser defaults //
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 0;
+}
+// Colors
+
+.BEERS{background-color: $beerColorBackground; color: $beerTextColor;}
+.COCKTAILS{background-color: $cocktailColorBackground; color: $cocktailTextColor;}   
+.COFFEES{background-color: $coffeeColorBackground; color: $coffeeTextColor;}
+.MILKSHAKES{background-color: $milkshakeColorBackground; color: $milkshakeTextColor;}
+
+// Icons //
+.BEERS-icon{background-image: $beerIconSmall;}
+.COCKTAILS-icon{background-image: $cocktailIconSmall;}
+.COFFEES-icon{background-image: $coffeeIconSmall;}
+.MILKSHAKES-icon{background-image: $milkshakeIconSmall;}
+
+// Borders //
+.BEERS-border{border-color: $beerColorBackground;}
+.COCKTAILS-border{border-color: $cocktailColorBackground;}
+.COFFEES-border{border-color: $coffeeColorBackground;}
+.MILKSHAKES-border{border-color: $milkshakeColorBackground;}
+// Comments //
+.comment{color: white}
+.BEERS-comment{background-color: $navigationTextColor;}
+.COCKTAILS-comment{background-color: $cocktailTextColor;}
+.COFFEES-comment{background-color: $coffeeTextColor;}
+.MILKSHAKES-comment{background-color: $milkshakeTextColor;}
+
+h3{text-align: center;}
+
+#root{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.page{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $backgroundColor;
+}
+
+.content{
+    position: relative;
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
+
+.btn-drinks{
+    background-color: $navigationColorBackground;
+    color: $navigationTextColor;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navigation{
+    width: 100%;
+    padding-top:16%;
+    background-color: $navigationColorBackground;
+    position: relative;
+    border-bottom: solid 3px $navigationTextColor;
+}
+
+
+.navigation-items{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.navigation-items__button{
+    color: $navigationTextColor;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: $navigationColorBackground;
+}
+
+.navigation-items__button:visited {color:$navigationTextColor;text-decoration: none;}
+.navigation-items__button:hover {color:$navigationTextColor;text-decoration: none;}   
+.navigation-items__button:active {color:$navigationTextColor;text-decoration: none;} 
+
+.navigation-brand{
+    height: 100%;
+    background-image: $drinksLogoSmall;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+
+
+.brand-image{
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60%;
+    padding-top: 60%;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+.profile-picture--big{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: solid 0.2rem $navigationTextColor;
+    margin: 10px auto;
+}
+.user-name{
+    width: 100%;
+    text-align: center;
+    color: $beerColorBackground;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+    padding-top: 40%;
+    background-image: url("../images/banner_image.jpg");
+    background-size: cover;
+}
+.banner__text-block{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,0.5);
+}
+.guest-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.guest-container > li{
+    border-radius: 10px;
+    margin: 0 5px;
+    padding: 0 5px;
+    margin-bottom: 2px;
+}
+.comment-container{
+    display: flex;
+    flex-direction: column;
+}
+.comment{
+    width: auto;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display:inline-block
+}
+.comment-border{
+    border: 0;
+    margin-top: 10px;
+}
+
+footer{
+    background-color: $navigationColorBackground;
+}
+.footer__content{
+    display: flex;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+
+
+.event-block__information{
+    
+    max-height:0;
+    transition: all 2s ease;
+}
+
+.event-block__information.active{
+    height: auto;
+    transition: all 2s ease;
+    max-height:1000px;
+}
+
+.event-block__information__text{
+    padding: 10px;
+    margin-bottom: 0;
+}
+.event-block__information__google-maps{
+    width: 100%;
+    padding-top: 60%;
+    position: relative;
+}
+
+.event-block__information__google-maps div{
+    top: 0;
+    left: 0;
+}
+
+.footer__content .MuiSvgIcon-root{
+    font-size: 3rem;
+    color: $navigationTextColor;
+}
+
+// Media Queries //
+@media only screen and (min-width: 768px) {
+    .navigation{
+        padding-top:80px; 
+    }
+    .event-block__information__google-maps{
+        width: 100%;
+        padding-top: 30%;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container{width: 100%;padding:0;}
+    .content-container{padding: 10px;}
+    .banner{padding-top: 60%;}
+}
+
