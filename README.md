@@ -12,16 +12,23 @@ Disable CORS when runned on localhost.
 
 
 when creating new accounts use the following names if you want to have an event on the homepage:
+
 Fie Jelved -
+
 Mark Hartley -
+
 Roger Planes
 
 
 
 One account is subscribed under all events:
+
 Phil Hardy
+
 login information:
+
 username: 'philhardy@gmail.com'
+
 pw: 'philhardy'
 
 
