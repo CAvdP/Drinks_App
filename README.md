@@ -13,9 +13,9 @@ Disable CORS when runned on localhost.
 
 when creating new accounts use the following names if you want to have an event on the homepage:
 
-Fie Jelved -
+Fie Jelved
 
-Mark Hartley -
+Mark Hartley
 
 Roger Planes
 
