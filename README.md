@@ -1,6 +1,7 @@
 # Drinks Assessment
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////// SETUP //////////////////////////////////////////////////
+
 Import the 'drinksDataBaseFile.agz' in a mongoDB Database.(Run it default under: localhost:27017)
 
 For the backend to run: $ nodemon app (runs under localhost:5000)
@@ -9,6 +10,7 @@ For front-end run: $ npm start (runs under localhost:3000)
 
 Disable CORS when runned on localhost.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 when creating new accounts use the following names if you want to have an event on the homepage:
 Phil Hard
 Fie Jelved
